@@ -1,0 +1,19 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A to do list to organize your tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belalgamal46/to-do-list.git"
+  },
+  "author": "Belal gamal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/belalgamal46/to-do-list/issues"
+  },
+  "homepage": "https://github.com/belalgamal46/to-do-list#readme"
+}
