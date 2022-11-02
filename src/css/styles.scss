@@ -1,3 +1,160 @@
+@import './globalStyles';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: bisque;
+  background-color: $primary-background;
+}
+
+main {
+  @include flex-center();
+
+  height: 100vh;
+}
+
+#to-do-container {
+  width: 25%;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.hero-container {
+  box-shadow: 0px 2px 8px rgb(0 0 0 / 15%);
+  background-color: white;
+  margin-top: 5rem;
+}
+
+.hero-title-container {
+  @include flex-center();
+
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #545862;
+    padding: 0 1.5rem;
+    flex: 30;
+  }
+
+  button {
+    padding: 1.5rem;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+    flex: 1;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+form {
+  @include flex-center();
+
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  input {
+    border: none;
+    padding: 0 1.5rem;
+    outline: none;
+    width: 100%;
+    line-height: 5rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    flex: 30;
+  }
+
+  button {
+    padding: 1.5rem;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    transition: all 0.3s;
+    flex: 1;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.clear-button {
+  background-color: $primary-background;
+  button {
+    padding: 1.5rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+}
+
+.list-items {
+  @include flex-center(column);
+
+  align-items: flex-start;
+  list-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  justify-content: space-between;
+
+  li {
+    @include flex-center();
+
+    width: 100%;
+    justify-content: flex-start;
+
+    input {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    label {
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      flex: 10;
+    }
+
+    svg {
+      padding: 1.5rem 0;
+      height: 15px;
+      cursor: move;
+      flex: 1;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }
