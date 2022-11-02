@@ -26,7 +26,7 @@
               <i class="fa-solid fa-rotate"></i>
             </button>
           </div>
-          <form>
+          <form class="add-form">
             <input
               type="text"
               name="add-to-list"
@@ -34,13 +34,19 @@
               placeholder="Add to your list..."
               value
             />
-            <button type="submit" title="click this or press enter to submit">
+            <button
+              type="submit"
+              title="click this or press enter to submit"
+              id="form-button"
+            >
               <i class="fa-solid fa-arrow-turn-down rotate"></i>
             </button>
           </form>
           <ul class="list-items"></ul>
-          <div class="clear-button">
-            <button type="button">Clear all completed</button>
+          <div class="clear-button-container">
+            <button type="button" class="clear-button">
+              Clear all completed
+            </button>
           </div>
         </div>
       </section>
