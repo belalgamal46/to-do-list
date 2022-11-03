@@ -140,24 +140,27 @@ main {
     width: 100%;
     justify-content: flex-start;
 
-    input {
+    input[type='checkbox'] {
       cursor: pointer;
       flex: 1;
     }
 
-    label {
+    input[type='text'] {
       padding: 1.5rem;
       font-size: 1.5rem;
-      flex: 10;
+      flex: 8;
+      outline: none;
+      border: none;
     }
 
-    svg {
+    i {
       padding: 1.5rem 0;
-      height: 15px;
-      cursor: move;
+      cursor: pointer;
       flex: 1;
       opacity: 0.5;
       transition: opacity 0.3s ease-out;
+      text-align: center;
+      font-size: 1.5rem;
 
       &:hover {
         opacity: 1;
