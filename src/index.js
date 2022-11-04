@@ -1,10 +1,8 @@
-/* eslint-disable operator-linebreak */
 /* eslint-disable import/extensions */
-/* eslint-disable import/no-extraneous-dependencies */
+
 import './css/styles.scss';
 import '@fortawesome/fontawesome-free/js/fontawesome';
-// import '@fortawesome/fontawesome-free/js/solid';
-import { AddItemsToList, Store, RemoveItemFromList } from './modules/index.js';
+import { AddItemsToList, Store, RemoveItemFromList, UpdateStatus } from './modules/index.js';
 
 // Event Listener to display items
 document.addEventListener('DOMContentLoaded', AddItemsToList.addListItemsToInterface);
@@ -49,4 +47,26 @@ listItems.addEventListener('input', (event) => {
   }
 });
 
+// Event To toggle is Task Completed
+listItems.addEventListener('change', (event) => {
+  if (event.target.name === 'checkbox') {
+    if (event.target.checked) {
+      event.target.nextElementSibling.classList.add('line-through');
+      UpdateStatus.updateTaskToCompleted(event.target);
+    } else {
+      event.target.nextElementSibling.classList.remove('line-through');
+      UpdateStatus.updateTaskToCompleted(event.target);
+    }
+  }
+});
+
+// Event To Clear All Completed Tasks
+const clearButtonContainer = document.querySelector('.clear-button-container');
+clearButtonContainer.addEventListener('click', () => {
+  const tasks = Store.getItems();
+  const filterdTasks = tasks.filter((task) => task.completed === false);
+  Store.setItems(filterdTasks);
+  RemoveItemFromList.changeTaskIndex();
+  AddItemsToList.addListItemsToInterface();
+});
 // localStorage.clear();

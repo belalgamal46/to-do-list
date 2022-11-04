@@ -6,3 +6,8 @@ $primary-background: #f6f6f6;
   align-items: center;
   flex-direction: $direction;
 }
+
+.line-through {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
