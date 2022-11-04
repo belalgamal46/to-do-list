@@ -17,18 +17,19 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
   const index = Store.getItems().length
     ? Store.getItems()[Store.getItems().length - 1].index + 1
-    : 1;
+    : 0;
   const item = { description: addListInput.value, completed: false, index };
   AddItemsToList.addItemToList(item);
   AddItemsToList.addListItemsToInterface();
   form.reset();
 });
 
-// Event To Remove Item From List Or To Add Edited Description To Store
+// Event To Remove Item From List
 const listItems = document.querySelector('.list-items');
 listItems.addEventListener('click', (event) => {
   if (event.target.classList.contains('fa-trash-can')) {
     RemoveItemFromList.removeItemFromList(event.target);
+    RemoveItemFromList.changeTaskIndex();
   }
 });
 
@@ -47,3 +48,5 @@ listItems.addEventListener('input', (event) => {
     AddItemsToList.addEditedTaskToStore(event.target.value, itemIndex);
   }
 });
+
+// localStorage.clear();
