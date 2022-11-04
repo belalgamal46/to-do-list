@@ -69,4 +69,3 @@ clearButtonContainer.addEventListener('click', () => {
   RemoveItemFromList.changeTaskIndex();
   AddItemsToList.addListItemsToInterface();
 });
-// localStorage.clear();
