@@ -14,8 +14,11 @@ class AddItemsToList {
             id="${task.index}"
             title="Check"
             value="${task.description}"
+            ${task.completed && 'checked'}
           />
-          <input type="text" name="description" value="${task.description}" id="${task.index}"/>
+          <input type="text" name="description" value="${task.description}" id="${
+        task.index
+      }" class="${task.completed ? 'line-through' : ''}"/>
           <i class="fa-solid fa-trash-can"></i>
         </li>
     `;
