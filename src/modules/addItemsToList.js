@@ -29,6 +29,7 @@ class AddItemsToList {
     const tasks = Store.getItems();
     tasks.push(task);
     Store.setItems(tasks);
+    AddItemsToList.addListItemsToInterface();
   };
 
   static addEditedTaskToStore = (newDescription, index) => {
