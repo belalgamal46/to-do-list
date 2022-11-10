@@ -63,10 +63,11 @@ listItems.addEventListener('change', (event) => {
 
 // Event To Clear All Completed Tasks
 const clearButtonContainer = document.querySelector('.clear-button-container');
-clearButtonContainer.addEventListener('click', () => {
+const clearCompletedItems = () => {
   const tasks = Store.getItems();
   const filterdTasks = tasks.filter((task) => task.completed === false);
   Store.setItems(filterdTasks);
   RemoveItemFromList.changeTaskIndex();
   AddItemsToList.addListItemsToInterface();
-});
+};
+clearButtonContainer.addEventListener('click', clearCompletedItems);
