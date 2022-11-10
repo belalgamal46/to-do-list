@@ -5,7 +5,9 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 import { AddItemsToList, Store, RemoveItemFromList, UpdateStatus } from './modules/index.js';
 
 // Event Listener to display items
-document.addEventListener('DOMContentLoaded', AddItemsToList.addListItemsToInterface);
+document.addEventListener('DOMContentLoaded', () => {
+  AddItemsToList.addListItemsToInterface();
+});
 
 // Event Listener to Add Item to List
 const form = document.querySelector('.add-form');
@@ -18,7 +20,6 @@ form.addEventListener('submit', (event) => {
     : 0;
   const item = { description: addListInput.value, completed: false, index };
   AddItemsToList.addItemToList(item);
-  AddItemsToList.addListItemsToInterface();
   form.reset();
 });
 
