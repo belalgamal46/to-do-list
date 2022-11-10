@@ -36,6 +36,7 @@ class AddItemsToList {
     const tasks = Store.getItems();
     tasks[index].description = newDescription;
     Store.setItems(tasks);
+    AddItemsToList.addListItemsToInterface();
   };
 }
 

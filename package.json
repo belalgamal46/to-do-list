@@ -4,7 +4,7 @@
   "description": "A to do list to organize your tasks",
   "private": true,
   "scripts": {
-    "test": "jest --coverage --watch ",
+    "test": "jest --watch --coverage",
     "stylelint": "npx stylelint '**/*.{css,scss}' --fix",
     "webhint": "npx hint .",
     "eslint": "npx eslint .",
