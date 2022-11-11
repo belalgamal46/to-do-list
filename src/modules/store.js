@@ -1,12 +1,6 @@
 class Store {
   static getItems = () => {
-    let tasks = null;
-    if (localStorage.getItem('tasks') === null) {
-      tasks = [];
-      return tasks;
-    }
-
-    tasks = JSON.parse(localStorage.getItem('tasks'));
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     return tasks;
   };
 

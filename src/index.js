@@ -30,7 +30,7 @@ listItems.addEventListener('click', (event) => {
 });
 
 // Event To Add Edited Description To Store
-listItems.addEventListener('input', (event) => {
+listItems.addEventListener('change', (event) => {
   addEditedToStore(event);
 });
 
