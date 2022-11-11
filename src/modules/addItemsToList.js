@@ -6,19 +6,20 @@ class AddItemsToList {
     const listItems = document.querySelector('.list-items');
     listItems.innerHTML = '';
     tasks.forEach((task) => {
+      const { index, description, completed } = task;
       listItems.innerHTML += `
         <li>
           <input
             type="checkbox"
             name="checkbox"
-            id="${task.index}"
+            id="${index}"
             title="Check"
-            value="${task.description}"
-            ${task.completed && 'checked'}
+            value="${description}"
+            ${completed && 'checked'}
           />
-          <input type="text" name="description" value="${task.description}" id="${
-        task.index
-      }" class="${task.completed ? 'line-through' : ''}"/>
+          <input type="text" name="description" value="${task.description}" id="${index}" class="${
+        completed ? 'line-through' : ''
+      }"/>
           <i class="fa-solid fa-trash-can"></i>
         </li>
     `;
